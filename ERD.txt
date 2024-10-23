@@ -1,0 +1,55 @@
+## Copilot
+Pour créer un modèle de relation d'entité (ERD) pour ce scénario, nous devons identifier les entités principales et leurs relations. Voici une proposition de modèle :
+Entités et Attributs- Gymnase
+    - ID_Gymnase (Identifiant unique)
+    - Nom
+    - Adresse
+    - Numéro de téléphone
+- Membre
+    - ID_Membre (Identifiant unique)
+    - Nom
+    - Prénom
+    - Adresse
+    - Date de naissance
+    - Sexe
+- Séance
+    - ID_Séance (Identifiant unique)
+    - Type de sport
+    - Horaire
+    - ID_Gymnase (Référence à Gymnase)
+    - Max_Membres (Maximum de 20)
+- Coach
+    - ID_Coach (Identifiant unique)
+    - Nom
+    - Prénom
+    - Âge
+    - Spécialité
+Relations- Gymnase - Séance
+    - Un gymnase peut avoir plusieurs séances.
+    - Une séance appartient à un seul gymnase.
+    - Relation : 1:N (Un gymnase à plusieurs séances)
+- Membre - Séance
+    - Un membre peut s'inscrire à plusieurs séances.
+    - Une séance peut avoir plusieurs membres (jusqu'à 20).
+    - Relation : N:M (Plusieurs membres à plusieurs séances)
+- Séance - Coach
+    - Une séance peut avoir jusqu'à deux coachs.
+    - Un coach peut animer plusieurs séances.
+    - Relation : N:M (Plusieurs coachs à plusieurs séances)
+Diagramme de Relation d'Entité (ERD)Voici une représentation textuelle du modèle ERD :
+
+Gymnase (ID_Gymnase, Nom, Adresse, Numéro de téléphone)
+  |
+  | 1:N
+  |
+Séance (ID_Séance, Type de sport, Horaire, ID_Gymnase, Max_Membres)
+  |
+  | N:M
+  |
+Membre (ID_Membre, Nom, Prénom, Adresse, Date de naissance, Sexe)
+  |
+  | N:M
+  |
+Coach (ID_Coach, Nom, Prénom, Âge, Spécialité)
+
+Ce modèle permet de gérer efficacement les inscriptions et les séances dans les différents gymnases, tout en assurant une bonne organisation des coachs et des membres. Si vous avez besoin d'une visualisation graphique ou d'une implémentation spécifique, n'hésitez pas à me le faire savoir !
